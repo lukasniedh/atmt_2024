@@ -114,7 +114,88 @@ cat \
  "version": "2.4.3"
 }
 
-## Second strategy: ??
+## Second strategy: word threshold for source and target language
+
+### preprocess data for word limit = 5
+```
+bash assignments/03/preprocess_data_2.sh
+```
+
+### train
+```
+python train.py \
+    --data data/en-fr/prepared_2 \
+    --source-lang fr \
+    --target-lang en \
+    --log-file assignments/03/preprocess_a/exp.log \
+    --save-dir assignments/03/preprocess_a/checkpoints \
+```
+
+### evaluate:
+```
+python translate.py \
+--data data/en-fr/prepared_2 \
+--dicts data/en-fr/prepared_2 \
+--checkpoint-path assignments/03/preprocess_a/checkpoints/checkpoint_best.pt \
+--output assignments/03/preprocess_a/translations.txt
+```
+
+### postprocessing:
+```
+bash scripts/postprocess.sh \
+    assignments/03/preprocess_a/translations.txt \
+    assignments/03/preprocess_a/translations.p.txt en
+```
+
+### calculate BLEU score
+```
+cat \
+    assignments/03/preprocess_a/translations.p.txt \
+    | sacrebleu data/en-fr/raw/test.en
+```
+
+### Results
+
+
+### preprocess data for word limit = 10
+```
+bash assignments/03/preprocess_data_3.sh
+```
+
+### train
+```
+python train.py \
+    --data data/en-fr/prepared_3 \
+    --source-lang fr \
+    --target-lang en \
+    --log-file assignments/03/preprocess_b/exp.log \
+    --save-dir assignments/03/preprocess_b/checkpoints \
+```
+
+### evaluate:
+```
+python translate.py \
+--data data/en-fr/prepared_3 \
+--dicts data/en-fr/prepared_3 \
+--checkpoint-path assignments/03/preprocess_b/checkpoints/checkpoint_best.pt \
+--output assignments/03/preprocess_b/translations.txt
+```
+
+### postprocessing:
+```
+bash scripts/postprocess.sh \
+    assignments/03/preprocess_b/translations.txt \
+    assignments/03/preprocess_b/translations.p.txt en
+```
+
+### calculate BLEU score
+```
+cat \
+    assignments/03/preprocess_b/translations.p.txt \
+    | sacrebleu data/en-fr/raw/test.en
+```
+
+### Results
 
 ## compare to baseline
 
