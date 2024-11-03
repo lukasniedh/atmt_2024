@@ -125,7 +125,7 @@ python train.py \
     --save-dir assignments/03/preprocess_a/checkpoints \
 ```
 
-### evaluate:
+### translate for evaluation:
 ```
 python translate.py \
 --data data/en-fr/prepared_2 \
@@ -166,7 +166,7 @@ python train.py \
     --save-dir assignments/03/preprocess_b/checkpoints \
 ```
 
-### evaluate:
+### translate for evaluation:
 ```
 python translate.py \
 --data data/en-fr/prepared_3 \
