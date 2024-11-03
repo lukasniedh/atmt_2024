@@ -26,7 +26,7 @@ python train.py \
     --save-dir assignments/03/learning-rate-a/checkpoints \
     --lr 0.0005
 ```
-### evaluate:
+### translate for evaluation:
 ```
 python translate.py \
     --data data/en-fr/prepared \
@@ -71,7 +71,7 @@ python train.py \
     --lr 0.001
 ```
 
-### evaluate:
+### translate for evaluation:
 ```
 python translate.py \
 --data data/en-fr/prepared \
