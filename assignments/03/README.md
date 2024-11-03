@@ -15,12 +15,6 @@ segmentation or a data augmentation method.
 
 ## First strategy: Tune a hyper-parameter
 
-Why? What data? how preprocessing? changes in the code? selected hyper-parameter? what training command? how were the models evaluated?
-
-Previous work has argued for larger batch sizes in NMT (Morishita et al., 2017; Neishi et al., 2017), but we find that using smaller batches is beneficial in lowresource settings.
-
-More aggressive dropout, including dropping whole words at random (Gal and Ghahramani, 2016), is also likely to be more important.
-
 The Baseline is using a learning rate of 0.0003 the firs thing we want to test if what effect the learning rate has on the bleu score. in the paper they suggest with higher learning rate.. we will test it with 0.0005 and 0.001.
 We use the same preprocessed data as in the baseline.
 ### train with 0.0005 lr:
