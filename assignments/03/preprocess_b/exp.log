@@ -1,0 +1,62 @@
+INFO: COMMAND: train.py --data data/en-fr/prepared_3 --source-lang fr --target-lang en --log-file assignments/03/preprocess_b/exp.log --save-dir assignments/03/preprocess_b/checkpoints
+INFO: Arguments: {'cuda': False, 'data': 'data/en-fr/prepared_3', 'source_lang': 'fr', 'target_lang': 'en', 'max_tokens': None, 'batch_size': 1, 'train_on_tiny': False, 'arch': 'lstm', 'max_epoch': 10000, 'clip_norm': 4.0, 'lr': 0.0003, 'patience': 3, 'log_file': 'assignments/03/preprocess_b/exp.log', 'save_dir': 'assignments/03/preprocess_b/checkpoints', 'restore_file': 'checkpoint_last.pt', 'save_interval': 1, 'no_save': False, 'epoch_checkpoints': False, 'encoder_embed_dim': 64, 'encoder_embed_path': None, 'encoder_hidden_size': 64, 'encoder_num_layers': 1, 'encoder_bidirectional': 'True', 'encoder_dropout_in': 0.25, 'encoder_dropout_out': 0.25, 'decoder_embed_dim': 64, 'decoder_embed_path': None, 'decoder_hidden_size': 128, 'decoder_num_layers': 1, 'decoder_dropout_in': 0.25, 'decoder_dropout_out': 0.25, 'decoder_use_attention': 'True', 'decoder_use_lexical_model': 'False', 'device_id': 0}
+INFO: Loaded a source dictionary (fr) with 806 words
+INFO: Loaded a target dictionary (en) with 762 words
+INFO: Built a model with 479226 parameters
+INFO: Epoch 000: loss 3.492 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 30.55 | clip 0.9985
+INFO: Epoch 000: valid_loss 4.4 | num_tokens 9.14 | batch_size 500 | valid_perplexity 81.4
+INFO: Epoch 001: loss 2.896 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 36.23 | clip 1
+INFO: Epoch 001: valid_loss 4.06 | num_tokens 9.14 | batch_size 500 | valid_perplexity 57.9
+INFO: Epoch 002: loss 2.627 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 38.65 | clip 0.9997
+INFO: Epoch 002: valid_loss 3.8 | num_tokens 9.14 | batch_size 500 | valid_perplexity 44.9
+INFO: Epoch 003: loss 2.458 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 40.95 | clip 0.9997
+INFO: Epoch 003: valid_loss 3.58 | num_tokens 9.14 | batch_size 500 | valid_perplexity 36
+INFO: Epoch 004: loss 2.319 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 42.47 | clip 0.9988
+INFO: Epoch 004: valid_loss 3.36 | num_tokens 9.14 | batch_size 500 | valid_perplexity 28.9
+INFO: Epoch 005: loss 2.209 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 43.7 | clip 0.9982
+INFO: Epoch 005: valid_loss 3.12 | num_tokens 9.14 | batch_size 500 | valid_perplexity 22.7
+INFO: Epoch 006: loss 2.108 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 44.89 | clip 0.9972
+INFO: Epoch 006: valid_loss 3 | num_tokens 9.14 | batch_size 500 | valid_perplexity 20.2
+INFO: Epoch 007: loss 2.023 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 45.78 | clip 0.9972
+INFO: Epoch 007: valid_loss 2.93 | num_tokens 9.14 | batch_size 500 | valid_perplexity 18.7
+INFO: Epoch 008: loss 1.955 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 46.12 | clip 0.9964
+INFO: Epoch 008: valid_loss 2.78 | num_tokens 9.14 | batch_size 500 | valid_perplexity 16.1
+INFO: Epoch 009: loss 1.896 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 46.54 | clip 0.996
+INFO: Epoch 009: valid_loss 2.74 | num_tokens 9.14 | batch_size 500 | valid_perplexity 15.5
+INFO: Epoch 010: loss 1.838 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 46.85 | clip 0.9948
+INFO: Epoch 010: valid_loss 2.84 | num_tokens 9.14 | batch_size 500 | valid_perplexity 17.2
+INFO: Epoch 011: loss 1.797 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 47.24 | clip 0.9951
+INFO: Epoch 011: valid_loss 2.67 | num_tokens 9.14 | batch_size 500 | valid_perplexity 14.4
+INFO: Epoch 012: loss 1.751 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 47.52 | clip 0.9946
+INFO: Epoch 012: valid_loss 2.7 | num_tokens 9.14 | batch_size 500 | valid_perplexity 14.9
+INFO: Epoch 013: loss 1.719 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 47.73 | clip 0.9935
+INFO: Epoch 013: valid_loss 2.52 | num_tokens 9.14 | batch_size 500 | valid_perplexity 12.4
+INFO: Epoch 014: loss 1.687 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.07 | clip 0.9939
+INFO: Epoch 014: valid_loss 2.44 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.5
+INFO: Epoch 015: loss 1.659 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.48 | clip 0.992
+INFO: Epoch 015: valid_loss 2.37 | num_tokens 9.14 | batch_size 500 | valid_perplexity 10.7
+INFO: Epoch 016: loss 1.631 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.36 | clip 0.9922
+INFO: Epoch 016: valid_loss 2.41 | num_tokens 9.14 | batch_size 500 | valid_perplexity 11.1
+INFO: Epoch 017: loss 1.605 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.6 | clip 0.9916
+INFO: Epoch 017: valid_loss 2.33 | num_tokens 9.14 | batch_size 500 | valid_perplexity 10.3
+INFO: Epoch 018: loss 1.586 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.27 | clip 0.9902
+INFO: Epoch 018: valid_loss 2.32 | num_tokens 9.14 | batch_size 500 | valid_perplexity 10.2
+INFO: Epoch 019: loss 1.568 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.7 | clip 0.99
+INFO: Epoch 019: valid_loss 2.31 | num_tokens 9.14 | batch_size 500 | valid_perplexity 10.1
+INFO: Epoch 020: loss 1.544 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.27 | clip 0.9899
+INFO: Epoch 020: valid_loss 2.26 | num_tokens 9.14 | batch_size 500 | valid_perplexity 9.59
+INFO: Epoch 021: loss 1.525 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.58 | clip 0.9901
+INFO: Epoch 021: valid_loss 2.2 | num_tokens 9.14 | batch_size 500 | valid_perplexity 9.03
+INFO: Epoch 022: loss 1.511 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.63 | clip 0.9894
+INFO: Epoch 022: valid_loss 2.24 | num_tokens 9.14 | batch_size 500 | valid_perplexity 9.35
+INFO: Epoch 023: loss 1.499 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.82 | clip 0.9887
+INFO: Epoch 023: valid_loss 2.15 | num_tokens 9.14 | batch_size 500 | valid_perplexity 8.61
+INFO: Epoch 024: loss 1.482 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.42 | clip 0.9878
+INFO: Epoch 024: valid_loss 2.13 | num_tokens 9.14 | batch_size 500 | valid_perplexity 8.41
+INFO: Epoch 025: loss 1.463 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.69 | clip 0.9883
+INFO: Epoch 025: valid_loss 2.18 | num_tokens 9.14 | batch_size 500 | valid_perplexity 8.88
+INFO: Epoch 026: loss 1.454 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.52 | clip 0.9877
+INFO: Epoch 026: valid_loss 2.14 | num_tokens 9.14 | batch_size 500 | valid_perplexity 8.48
+INFO: Epoch 027: loss 1.44 | lr 0.0003 | num_tokens 9.1 | batch_size 1 | grad_norm 48.37 | clip 0.9876
+INFO: Epoch 027: valid_loss 2.16 | num_tokens 9.14 | batch_size 500 | valid_perplexity 8.66
+INFO: No validation set improvements observed for 3 epochs. Early stop!
