@@ -15,8 +15,8 @@ segmentation or a data augmentation method.
 
 ## First strategy: Tune a hyper-parameter
 
-The Baseline is using a learning rate of 0.0003 the firs thing we want to test if what effect the learning rate has on the bleu score. in the paper they suggest with higher learning rate.. we will test it with 0.0005 and 0.001.
-We use the same preprocessed data as in the baseline.
+The Baseline is using a learning rate of 0.0003 the firs thing we want to test if what effect the learning rate has on the bleu score. We use the same preprocessed data as in the baseline.
+
 ### train with 0.0005 lr:
 ```
 python train.py \
@@ -47,6 +47,7 @@ cat \
     | sacrebleu data/en-fr/raw/test.en
 ```
 ### Results:
+```
 {
  "name": "BLEU",
  "score": 16.6,
@@ -59,6 +60,7 @@ cat \
  "smooth": "exp",
  "version": "2.4.3"
 }
+```
 
 ### train with 0.001 lr:
 ```
@@ -95,6 +97,7 @@ cat \
 ```
 
 ### Results
+```
 {
  "name": "BLEU",
  "score": 9.6,
@@ -107,6 +110,7 @@ cat \
  "smooth": "exp",
  "version": "2.4.3"
 }
+```
 
 ## Second strategy: word threshold for source and target language
 
@@ -149,7 +153,20 @@ cat \
 ```
 
 ### Results
-
+```
+{
+ "name": "BLEU",
+ "score": 16.1,
+ "signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.3",
+ "verbose_score": "44.2/21.6/11.8/6.0 (BP = 1.000 ratio = 1.322 hyp_len = 5147 ref_len = 3892)",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "no",
+ "tok": "13a",
+ "smooth": "exp",
+ "version": "2.4.3"
+}
+```
 
 ### preprocess data for word limit = 10
 ```
@@ -190,6 +207,20 @@ cat \
 ```
 
 ### Results
+```
+{
+ "name": "BLEU",
+ "score": 11.8,
+ "signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.3",
+ "verbose_score": "39.0/16.8/8.1/3.6 (BP = 1.000 ratio = 1.427 hyp_len = 5555 ref_len = 3892)",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "no",
+ "tok": "13a",
+ "smooth": "exp",
+ "version": "2.4.3"
+}
+```
 
 ## compare to baseline
 
