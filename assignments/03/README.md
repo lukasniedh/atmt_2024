@@ -221,9 +221,3 @@ cat \
  "version": "2.4.3"
 }
 ```
-
-## compare to baseline
-
-table, visualization, qualitative analysis..
-
-## what did I learn?
