@@ -2,10 +2,13 @@ import subprocess
 import matplotlib.pyplot as plt
 import json
 import os
+import time
 
-beam_sizes = [1,3,5,10,15,20,25]
+beam_sizes = [1,3,5,7,10,15,20,25]
 
 bleu_scores = []
+
+decode_time = []
 
 data = "data/en-fr/prepared"
 dicts = "data/en-fr/prepared"
@@ -23,9 +26,15 @@ for beam_size in beam_sizes:
             "--dicts", dicts,
             "--checkpoint-path", checkpoint_path,
             "--output", translation_output_file,
-            "--beam-size", str(beam_size)
+            "--beam-size", str(beam_size),
+            "--alpha", "0.6"
         ]
+
+        start_time = time.time()
         subprocess.run(translation_command, check=True)
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        decode_time.append(elapsed_time)
     
     # Run the post-processing bash script
     postprocess_output_file = f"assignments/05/01_beam_sizes/translation_{beam_size}.p.txt"
@@ -59,13 +68,12 @@ for beam_size in beam_sizes:
 #plot BLEU score vs beam size
 scores = [entry["score"] for entry in bleu_scores]
 plt.figure(figsize=(8, 6))
-plt.plot(beam_sizes, scores, marker="o", linestyle="-", label="BLEU Score")
+plt.plot(beam_sizes, scores, marker="o", linestyle="-")
 plt.title("BLEU Scores")
 plt.xlabel("Beam Size")
 plt.ylabel("BLEU Score")
 plt.xticks(beam_sizes)
 plt.grid(True)
-plt.legend()
 plt.savefig("assignments/05/01_beam_sizes/bleu_score_vs_beam_size.png", format="png", dpi=300, bbox_inches="tight")
 
 #plot BLEU score vs Brevity Penalty
@@ -87,5 +95,18 @@ plt.ylabel("BLEU Score")
 for bp, score, label in zip(bp_values, scores, beam_sizes):
     plt.text(bp, score, f" [{label}] ")
 
+plt.grid(True)
 plt.legend()
 plt.savefig("assignments/05/01_beam_sizes/BP_values_vs_bleu_score.png", format="png", dpi=300, bbox_inches="tight")
+
+#plot time if all decode times have been measured
+if len(beam_sizes) == len(decode_time):
+
+    plt.figure(figsize=(8, 6))
+    plt.plot(beam_sizes, decode_time, marker="o", linestyle="-")
+    plt.title("Translation Time")
+    plt.xlabel("Beam Size")
+    plt.ylabel("Time [seconds]")
+    plt.xticks(beam_sizes)
+    plt.grid(True)
+    plt.savefig("assignments/05/01_beam_sizes/time_vs_beam_size.png", format="png", dpi=300, bbox_inches="tight")
