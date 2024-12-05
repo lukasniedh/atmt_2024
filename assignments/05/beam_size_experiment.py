@@ -46,4 +46,8 @@ for beam_size in beam_sizes:
 
     bleu_output = json.loads(result.stdout)
 
-    print(bleu_output["score"])
+    print(f"Beam size {beam_size} gives bleu score: {bleu_output['score']}")
+
+    bleu_scores.append(bleu_output)
+
+
