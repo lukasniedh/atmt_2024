@@ -128,6 +128,9 @@ def main(args):
 
             # Get the current nodes to expand
             nodes = [n[1] for s in searches for n in s.get_current_beams()]
+
+            if all(node.completed for node in [n[1] for s in searches for n in s.get_current_beams()]):
+                break
             if nodes == []:
                 break # All beams ended in EOS
 
@@ -192,7 +195,7 @@ def main(args):
             # __QUESTION 5: What happens internally when we prune our beams?
             # How do we know we always maintain the best sequences?
             for search in searches:
-                search.prune()
+                search.prune_3_2()
 
         # Segment into sentences
         best_sents = torch.stack([search.get_best()[1].sequence[1:].cpu() for search in searches])
