@@ -126,11 +126,12 @@ def main(args):
         # Start generating further tokens until max sentence length reached
         for _ in range(args.max_len-1):
 
-            # Get the current nodes to expand
-            nodes = [n[1] for s in searches for n in s.get_current_beams()]
-
             if all(node.completed for node in [n[1] for s in searches for n in s.get_current_beams()]):
                 break
+
+            # Get the current nodes to expand
+            nodes = [n[1] for s in searches for n in s.get_current_beams() if not n[1].completed]
+
             if nodes == []:
                 break # All beams ended in EOS
 
